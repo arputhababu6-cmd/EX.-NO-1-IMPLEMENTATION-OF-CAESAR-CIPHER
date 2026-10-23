@@ -28,10 +28,11 @@ int main()
     printf("Enter text: ");
     fgets(text, sizeof(text), stdin);
 
-    printf("Enter shift: ");
+    printf("Enter key: ");
     scanf("%d", &shift);
 
-    // Encryption
+    shift = ((shift % 26) + 26) % 26;
+
     for (i = 0; text[i] != '\0'; i++)
     {
         if (text[i] >= 'a' && text[i] <= 'z')
@@ -43,9 +44,20 @@ int main()
 
     printf("Encrypted text: %s", text);
 
+    for (i = 0; text[i] != '\0'; i++)
+    {
+        if (text[i] >= 'a' && text[i] <= 'z')
+            text[i] = (text[i] - 'a' - shift + 26) % 26 + 'a';
+
+        else if (text[i] >= 'A' && text[i] <= 'Z')
+            text[i] = (text[i] - 'A' - shift + 26) % 26 + 'A';
+    }
+
+    printf("Decrypted text: %s", text);
+
     return 0;
 }
-```
+
 
 ## OUTPUT:
 <img width="1542" height="671" alt="image" src="https://github.com/user-attachments/assets/c1813d15-b567-4cc9-93b1-d194129ec871" />
