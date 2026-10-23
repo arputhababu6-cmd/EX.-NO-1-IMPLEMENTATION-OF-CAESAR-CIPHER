@@ -57,7 +57,7 @@ int main()
 
     return 0;
 }
-
+```
 
 ## OUTPUT:
 <img width="1542" height="671" alt="image" src="https://github.com/user-attachments/assets/c1813d15-b567-4cc9-93b1-d194129ec871" />
